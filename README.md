@@ -1,0 +1,1 @@
+This project is to replace having to use social media to acquire genshin information.
