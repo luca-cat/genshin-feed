@@ -23,12 +23,12 @@ public class FeedDisplay {
     }
 
     public int getLimitOfLeaks(){
-        System.out.println("How many leaks would you like to show?");
+        System.out.println("How many leaks would you like to show? (MAX 5)");
 
         while (true){
             int leakQuantity = Integer.valueOf(sc.nextLine());
 
-            if (leakQuantity <= 0){
+            if (leakQuantity <= 0 || leakQuantity > 5){
                 System.out.println("invalid option");
                 continue;
             } 
@@ -36,6 +36,23 @@ public class FeedDisplay {
             return leakQuantity;
         }
 
+    }
+
+    public void registerFavourite(){
+        
+        System.out.println("Will you favourite?");
+
+        while (true){
+            String selection = sc.nextLine();
+            selection = selection.toLowerCase();
+            if (selection.equals("y") || selection.equals("yes")){
+                System.out.println("Which one?");
+                return;
+            } else {
+                System.out.println("Understood...");
+                return;
+            }
+        }
     }
 
 }

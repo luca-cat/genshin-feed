@@ -30,14 +30,20 @@ public class Main {
                 System.out.println();
 
                 for (int i = 0; i < limit; i++){
-                    if (feed.getLeaks().size() < limit){
-                        System.out.println(feed.getLeaks().get(i) + "\n");
+
+                    int numberListFormat = i+1;
+
+                    if (i >= feed.getLeaks().size()){
+                        System.out.println(numberListFormat + ". " + "Leak not found");
+                        System.out.println();
                     } else {
-                        System.out.println("Leak unavailable");
+                        System.out.println(numberListFormat + ". " + feed.getLeaks().get(i) + "\n");
                     }
                 }
 
-                //prints out each leak in the leak list
+                feed.registerFavourite();
+
+                //prints out each leak in the leak list to a certain limit
 
                 System.out.println();
                 continue;
